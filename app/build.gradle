@@ -6,8 +6,6 @@ android {
         applicationId "com.zhijia.hotelpad"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -43,4 +41,5 @@ dependencies {
     implementation files('libs/core-3.2.1.jar')
     compile files('libs/okhttp-3.8.1.jar')
     compile files('libs/okio-1.14.0.jar')
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.2.2'
 }

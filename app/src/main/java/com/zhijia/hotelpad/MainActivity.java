@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -15,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -25,19 +22,13 @@ import com.google.zxing.qrcode.QRCodeWriter;
 import com.zsoft.signala.ConnectionState;
 import com.zsoft.signala.hubs.HubConnection;
 import com.zsoft.signala.hubs.HubInvocationMessage;
-import com.zsoft.signala.hubs.HubInvokeCallback;
-import com.zsoft.signala.hubs.IHubProxy;
 import com.zsoft.signala.transport.StateBase;
 import com.zsoft.signala.transport.longpolling.DisconnectedState;
 import com.zsoft.signala.transport.longpolling.LongPollingTransport;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
