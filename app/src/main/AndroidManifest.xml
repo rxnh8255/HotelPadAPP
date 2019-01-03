@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.zhijia.hotelpad" android:versionName="1.0.1" android:versionCode="101">
+    package="com.zhijia.hotelpad" android:versionName="1.0.2" android:versionCode="102">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -12,24 +12,17 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:replace="android:icon" android:name=".SophixStubApplication">
-        <meta-data
-            android:name="com.taobao.android.hotfix.IDSECRET"
-            android:value="24908296" />
-        <meta-data
-            android:name="com.taobao.android.hotfix.APPSECRET"
-            android:value="f1a3ffe46256d23bfd2d302b6a89f591" />
-        <meta-data
-            android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8+AdxCg6wFBgsJeDIElLrl/kwksxdxd32TFCDFtbMAHtu/tYPIYt+s1ADHmGIjM3bE1slJOdZ/jUbqOZKpWY1ZyCEHtJQJz3qLsOLZlOuaSc1cmP6nzpFxKhnyXE9mGjSXUv7/zA1sm8XK3UMIF1wPQ75UdJkNEM516QIOQg9qs/u8Ys63rnHtgYjlDPO/OigrhVQ63sXvOk3HhbcINWen7o7bj3MrJ+E51uWz+2JDqv8LsEjo0ipPE0kfFoxvi4SbwXgUBabGouUmh1eikx/w7H+mIJ+SxGGKIpYiXxyBG8akgm3vnRdEnd4j4u4BGWg1a4vBBaoniSXDFZgEPY1AgMBAAECggEAFDK6sOVvTnjHYKinzxrOTCpRU1TNjVRh9jqP/IMLcIC4sNOCU9m1DFTkP4EW0b6jHkCCZIT+SYs3Z/50pxPoydp9CkI1HqYjIw3ejt7gIOtSao8QirBMTTrI+Vb5yKiqw5l/Tq8nGwY4g5R8jVBETIPqPtH1GArSCLO477wQ2m5hiHSG/G7dXJeXowKB2zj0yE9KKTc8OMn7HRNmbt53FElHNaQoKzDdGl+S5b7C8cToIvVy2jhLKwpW4s7Uod6LDBOyLyi1lFUAQUFEhxBZgI6JyhyYhnp7lyTm0CS0FYIDDPoJoGHwD09js4oh1OFcwc+sn0BfFG8WTE4V8to3YQKBgQDchbh0HvL3DZKMS1jzH6Gg9vUleTQlqZvZPbWLcCsmDxnVOSpyPjqdXlbeBu/wpTCo1+cTk3E0w+X5JQuuz2VMrn4yPJfESVw28yubzc9vzyzIse+eS1fVyRlGVqaKZHn1sX1y2lTA04kJX5Rv9l1HSSwQjJRPnPL62G0RXcYfLQKBgQDbXsTSzqtpbiBAaPIYBRlHZb7XC+NtjJm9Fl67W/49QYWxl69tle+am+xbA9iB5UxF4N54jFEEdiXVzSoC4nf7yj2P9n/CSuzCHGyTwLfq8iZ8OXWYVAX6hMxjp2r+1gZqZAiwpompjSNugI5yE3h//DXcYrOqqC+mUDRm2ijYKQKBgQDNqqEnG546L5xX4AXrabrSZsCn3Gx4G8FQUK86hriXXEoZhKFDvynnjw6xMAMjiszhC8tlhIN2VKXtQVGuDZtKcwsbS0u4MzsfvJcVTlOC0dPQsbLrDRW0O0OpSDM2qxLbxFddgKa+2ArchRnpefnw/Btuq82+moA61xKRucWHWQKBgC14JzPKwpzHxseS+Rshc2vpGvVX8XvzeKpIyLntB3WK7zswRZxhR5i0WPlEgsvpyzVwtqwl6WUTWCRIsjyG1HfMI5aDcVfET+6sFZVKjNSV/IQjJMy+Hb8fZ34AZZ0Mn6fNtD9pRX9vUbjFzMC4aHGexUs46iSlV7sRRMtMzMqBAoGAVIKy4Mf8VW9utA983r8N/tzTdSKSSGYPYrUB6lCZpBTfoNJRKTpPsjIgyqZrQwyMeD0WLbkqRO8F5mYN9337txCNs2Aa9q6vMw9oqb4i2bS34ThZul0lt3tk5RfM5p70bo6mnWBOJ7r4P42eyujsQ5ZT26ryZrK9mRcUIxD/jF0=" />
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:replace="android:icon" android:name=".HotelApplication">
 
         <activity
             android:name=".MainActivity"

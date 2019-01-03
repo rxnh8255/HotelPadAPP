@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.zhijia.hotelpad"
         minSdkVersion 23
         targetSdkVersion 26
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -33,13 +36,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:support-annotations:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile 'com.github.erizet.signala:signala-longpolling:0.20'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    compile project(':signalr4j')
     implementation files('libs/galaxy-lite-2.0.0.jar')
     implementation files('libs/core-3.2.1.jar')
     compile files('libs/okhttp-3.8.1.jar')
     compile files('libs/okio-1.14.0.jar')
-    compile 'com.aliyun.ams:alicloud-android-hotfix:3.2.2'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.1'
 }

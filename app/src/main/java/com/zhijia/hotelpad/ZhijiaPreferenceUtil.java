@@ -9,6 +9,7 @@ import android.content.Context;
 
 public class ZhijiaPreferenceUtil extends PreferenceUtil {
     public static final String Zhijia_OAUTH_CONFIG = "zhijia_oauth_config";
+    public static final String HUB_NAME = "messagehub";
 
   public static class ZhijiaPrefenenceKey {
     // 持久化token信息的各种监制

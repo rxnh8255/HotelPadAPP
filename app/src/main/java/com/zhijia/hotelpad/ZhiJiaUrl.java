@@ -5,7 +5,8 @@ package com.zhijia.hotelpad;
  */
 
 public final class ZhiJiaUrl {
-    public static final String HUB_URL = "https://hotel.zhijiaiot.com/signalr/hubs";
+    public static final String HUB_URL = "https://hotel.zhijiaiot.com";
+    //public static final String HUB_URL = "https://hotel.zhijiaiot.com/signalr/hubs";
     public static final String Account = "https://hotel.zhijiaiot.com/api/Account/me";
     public static final String Login = "https://hotel.zhijiaiot.com/api/Account/Login";
     public static final String EnterpriseFind = "https://hotel.zhijiaiot.com/api/enterprise/Find";
