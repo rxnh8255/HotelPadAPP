@@ -1,23 +1,10 @@
 package com.zhijia.hotelpad;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.OperationApplicationException;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.PowerManager;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -29,11 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.JsonElement;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
 import com.zhijiaiot.app.signalr4j.ConnectionState;
 import com.zhijiaiot.app.signalr4j.LogLevel;
 import com.zhijiaiot.app.signalr4j.Logger;
@@ -43,11 +25,6 @@ import com.zhijiaiot.app.signalr4j.hubs.HubProxy;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.zhijia.hotelpad.ZhiJiaUrl.HUB_URL;
 import static com.zhijia.hotelpad.ZhijiaPreferenceUtil.HUB_NAME;
@@ -99,10 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void beginConnect() {
 
-        if(connection != null){
-            connection.stop();
-            connection = null;
-        }else{
             proxy = null;
             connection = null;
 
@@ -139,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                                         String Qrcode = guestInfo.getString("Qrcode") == null?"meideerweima":guestInfo.getString("Qrcode");
                                         String room_num = guestInfo.getString("room_num");
                                         String guest_name = guestInfo.getString("guest_name");
-                                        String guest_identification = guestInfo.getString("guest_identification");
+                                        //String guest_identification = guestInfo.getString("guest_identification");
 
                                         showQr(Qrcode,room_num,guest_name);
 
@@ -191,14 +164,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void stateChanged(ConnectionState oldState, ConnectionState newState) {
                     Log.i(TAG, "ChangeState:"+oldState+" ==> "+newState);
-                    if(newState == ConnectionState.Disconnected ||newState == ConnectionState.Reconnecting){
-                        beginConnect();
-                    }
+//                    if(newState == ConnectionState.Disconnected ||newState == ConnectionState.Reconnecting){
+//                        beginConnect();
+//                    }
                 }
             });
 
-            connection.start().isDone();
-        }
+            connection.start();
+
     }
 
     private void showQr(String qrcode,String roomName,String tel){
@@ -208,6 +181,8 @@ public class MainActivity extends AppCompatActivity {
             dialog = dialogBuild.create(R.layout.dialog_share);
             //dialog.setCanceledOnTouchOutside(true);// 点击外部区域关闭
         }
+        if(this.isFinishing())
+            return;
         dialog.show();
         WindowManager.LayoutParams params =
                 dialog.getWindow().getAttributes();
